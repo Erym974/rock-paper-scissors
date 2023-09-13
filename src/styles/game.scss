@@ -1,0 +1,179 @@
+.game {
+    width: 100%; height: 100vh;
+    display: flex;
+
+    // transform: rotate(90deg);
+
+    .player {
+        width: 50%; height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        .selection {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            width: 60%;
+
+            text-align: center;
+            font-size: 3.5rem;
+            font-family: 'Anton', sans-serif;
+            color: #fff;
+
+            &.animate {
+                animation: 0.4s linear infinite alternate play;
+            }
+
+            @keyframes play {
+                0% {
+                    transform: rotate(-10deg);
+                }
+                100% {
+                    transform: rotate(10deg);
+                }
+            }
+
+        }
+
+        .waiting {
+            display: flex;
+            flex-direction: column;
+            align-items: center; justify-content: center;
+            text-align: center;
+            svg{
+                width: 100px;
+                height: 100px;
+                margin: 20px;
+                display:inline-block;
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+              }
+            span {
+                font-size: 2.5rem;
+                font-family: 'Anton', sans-serif;
+                color: #fff;
+            }
+        }
+
+    }
+
+    .separator {
+        position: fixed;
+        left: 50%;
+        transform: translate(-50%);
+        background-color: transparent !important;
+        img {
+            height: 100vh; width: auto !important;
+            object-fit: cover;
+        }
+    }
+
+    .you {
+        background : -moz-radial-gradient(50% 50%, circle farthest-corner, rgba(255, 149, 0, 1) 50%, rgba(246, 138, 0, 1) 58.39%, rgba(236, 127, 0, 1) 78.52%, rgba(233, 123, 0, 1) 100%);
+        background : -webkit-radial-gradient(50% 50%, circle farthest-corner, rgba(255, 149, 0, 1) 50%, rgba(246, 138, 0, 1) 58.39%, rgba(236, 127, 0, 1) 78.52%, rgba(233, 123, 0, 1) 100%);
+        background : -webkit-gradient(radial,50% 50% ,281.07 , 50% 50%, 610.1 ,color-stop(0.4607,rgba(255, 149, 0, 1) ),color-stop(0.5839,rgba(246, 138, 0, 1) ),color-stop(0.7852,rgba(236, 127, 0, 1) ),color-stop(1,rgba(233, 123, 0, 1) ));
+        background : -o-radial-gradient(50% 50%, circle farthest-corner, rgba(255, 149, 0, 1) 50%, rgba(246, 138, 0, 1) 58.39%, rgba(236, 127, 0, 1) 78.52%, rgba(233, 123, 0, 1) 100%);
+        background : -ms-radial-gradient(50% 50%, circle farthest-corner, rgba(255, 149, 0, 1) 50%, rgba(246, 138, 0, 1) 58.39%, rgba(236, 127, 0, 1) 78.52%, rgba(233, 123, 0, 1) 100%);
+        background: radial-gradient(50% 50%, circle farthest-corner, rgba(255, 149, 0, 1) 50%, rgba(246, 138, 0, 1) 58.39%, rgba(236, 127, 0, 1) 78.52%, rgba(233, 123, 0, 1) 100%);
+        filter: progid:DXImageTransform.Microsoft.Alpha(Stlye=2);
+    
+        .selection {
+            img {
+                transform: scaleX(-1);
+            }
+        }
+    }
+
+    .opponent {
+        background : -moz-radial-gradient(50% 50%, circle farthest-corner, rgba(212, 0, 5, 1) 50%, rgba(204, 0, 5, 1) 51.24%, rgba(185, 0, 4, 1) 66.83%, rgba(174, 0, 4, 1) 82.89%, rgba(170, 0, 4, 1) 100%);
+        background : -webkit-radial-gradient(50% 50%, circle farthest-corner, rgba(212, 0, 5, 1) 50%, rgba(204, 0, 5, 1) 51.24%, rgba(185, 0, 4, 1) 66.83%, rgba(174, 0, 4, 1) 82.89%, rgba(170, 0, 4, 1) 100%);
+        background : -webkit-gradient(radial,50% 50% ,281.07 , 50% 50%, 610.1 ,color-stop(0.4607,rgba(212, 0, 5, 1) ),color-stop(0.5124,rgba(204, 0, 5, 1) ),color-stop(0.6683,rgba(185, 0, 4, 1) ),color-stop(0.8289,rgba(174, 0, 4, 1) ),color-stop(1,rgba(170, 0, 4, 1) ));
+        background : -o-radial-gradient(50% 50%, circle farthest-corner, rgba(212, 0, 5, 1) 50%, rgba(204, 0, 5, 1) 51.24%, rgba(185, 0, 4, 1) 66.83%, rgba(174, 0, 4, 1) 82.89%, rgba(170, 0, 4, 1) 100%);
+        background : -ms-radial-gradient(50% 50%, circle farthest-corner, rgba(212, 0, 5, 1) 50%, rgba(204, 0, 5, 1) 51.24%, rgba(185, 0, 4, 1) 66.83%, rgba(174, 0, 4, 1) 82.89%, rgba(170, 0, 4, 1) 100%);
+        background : radial-gradient(50% 50%, circle farthest-corner, rgba(212, 0, 5, 1) 50%, rgba(204, 0, 5, 1) 51.24%, rgba(185, 0, 4, 1) 66.83%, rgba(174, 0, 4, 1) 82.89%, rgba(170, 0, 4, 1) 100%);
+        filter: progid:DXImageTransform.Microsoft.Alpha(Stlye=2);
+    }
+
+    .choices {
+        position: fixed;
+        bottom: 0; left: 50%;
+        transform: translate(-50%);
+        padding: 20px;
+        border-radius: 8px;
+
+        display: flex;
+        gap: 20px;
+
+        button {
+            background-color: #000;
+            padding: 5px;
+            outline: none;
+            border: 5px #fff solid;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.15s ease-in-out;
+            
+            &:hover,
+            &.selected {
+                transform: scale(1.1);
+            }
+
+            &.selected {
+                border-color: #d13a97;
+            }
+
+            img {
+                height: 50px; width: 50px;
+                // transform: ;
+                transform: rotate(-50deg) scaleX(-1);
+            }
+        }
+    }
+
+    .timer {
+        position: fixed;
+        left: 50%; bottom: 0;
+        transform: translate(-50%, -25%);
+
+        &.hide {
+            display: none;
+        }
+
+        font-size: 10rem;
+        font-family: 'Anton', sans-serif;
+        color: #000;
+    }
+
+    .result {
+        position: fixed;
+        background-color: rgba(0, 0, 0, 0.7);
+        width: 100%; height: 100vh;
+        display: flex;
+        align-items: center; justify-content: center;
+        .content {
+
+            display: flex;
+            flex-direction: column;
+
+            .fireworks {
+                position: absolute;
+                top: 0; left: 0;
+                pointer-events: none;
+            }
+
+            span {
+                font-size: 10rem;
+                font-family: 'Anton', sans-serif;
+                color: #FFF;
+            }
+
+            button {
+                padding: 10px;
+                cursor: pointer;
+            }
+        }
+    }
+}

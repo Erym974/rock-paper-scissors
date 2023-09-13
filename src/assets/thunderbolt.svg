@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Calque_2" data-name="Calque 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 168.22 1081.1">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+        stroke: #fff;
+        stroke-miterlimit: 10;
+        stroke-width: 7.5px;
+      }
+    </style>
+  </defs>
+  <g id="ThunderBolt">
+    <polygon class="cls-1" points="164.1 556.53 84.1 516.53 84.1 .53 4.1 556.53 84.1 596.53 84.1 1080.53 164.1 556.53"/>
+  </g>
+</svg>
